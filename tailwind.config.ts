@@ -1,23 +1,38 @@
 import { nextui } from "@nextui-org/react";
+import ContainerQueries from "@tailwindcss/container-queries";
 import type { Config } from "tailwindcss";
 
 const config: Config = {
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/**/*.{js,ts,jsx,tsx,mdx}",
     "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-      },
-    },
+    extend: {},
   },
   darkMode: "class",
-  plugins: [nextui()],
+  plugins: [
+    nextui({
+      prefix: "nextui",
+      addCommonColors: false,
+      defaultTheme: "light",
+      defaultExtendTheme: "light",
+      layout: {
+        radius: {
+          small: "0.3125rem",
+          medium: "0.625rem",
+          large: "1rem",
+        },
+        borderWidth: {
+          small: "0.0625rem",
+        },
+        boxShadow: {
+          small: "var(--bx-shadow-1)",
+        },
+      },
+    }),
+    ContainerQueries,
+  ],
 };
 export default config;
+

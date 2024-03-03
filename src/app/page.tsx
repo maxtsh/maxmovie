@@ -1,7 +1,7 @@
 const HomePage: React.FC = () => {
   return (
     <main>
-      <h1>Hello World</h1>
+      <h1>Welcome to max movie</h1>
     </main>
   );
 };
