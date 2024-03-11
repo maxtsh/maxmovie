@@ -15,7 +15,7 @@ import { IoSearch } from "react-icons/io5";
 const Header: React.FC = () => {
   return (
     <div className="flex flex-1">
-      <div className="flex max-w-xs flex-[25%] items-center px-6 py-2">
+      <div className="flex max-w-[16rem] flex-[25%] items-center px-6 py-2">
         <Link href="/">
           <h1 className="text-xl font-semibold">Max Movie</h1>
         </Link>
@@ -37,7 +37,7 @@ const Header: React.FC = () => {
             </li>
           </ul>
         </div>
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-5">
           <Input
             size="sm"
             label=""
@@ -48,11 +48,16 @@ const Header: React.FC = () => {
             className="max-w-xs"
             endContent={<IoSearch size={18} />}
           />
-          <Button size="sm" radius="lg" color="secondary" variant="light">
+          <Button size="sm" radius="lg" color="secondary" variant="bordered">
             Signin
           </Button>
-          <Button size="sm" radius="lg" color="secondary" variant="bordered">
-            Signup
+          <Button
+            size="sm"
+            radius="lg"
+            color="secondary"
+            variant="solid"
+            className="px-8">
+            Subscribe
           </Button>
           <Badge color="danger" content={2}>
             <FaRegBell size={20} />
@@ -60,7 +65,7 @@ const Header: React.FC = () => {
           <Popover
             radius="md"
             placement="bottom"
-            classNames={{ content: "h-48 w-44" }}>
+            classNames={{ content: "h-52 w-64" }}>
             <PopoverTrigger>
               <div className="flex items-center gap-1">
                 <Avatar
@@ -74,7 +79,7 @@ const Header: React.FC = () => {
             </PopoverTrigger>
             <PopoverContent>
               <div>
-                <h1>Hello</h1>
+                <h1>Welcome</h1>
               </div>
             </PopoverContent>
           </Popover>
