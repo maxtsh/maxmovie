@@ -10,7 +10,7 @@ const DashboardLayout: React.FC<Props> = ({ children }) => {
         <Header />
       </header>
       <div className="flex flex-1 overflow-y-auto">
-        <aside className="flex max-w-[16rem] flex-[25%] flex-col">
+        <aside className="hidden max-w-[16rem] flex-[25%] flex-col md:flex">
           <Sidebar />
         </aside>
         <main className="flex flex-1 flex-col overflow-y-auto p-2">

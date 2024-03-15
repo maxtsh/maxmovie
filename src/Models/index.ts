@@ -15,7 +15,7 @@ export type MovieListItem = {
   vote_count: number;
 };
 
-export type NowPlayingData = {
+export type MovieList = {
   dates: {
     maximum: string;
     minimum: string;

@@ -24,7 +24,7 @@ const Header: React.FC = () => {
         <div className="flex">
           <ul className="flex items-center gap-4">
             <li className="text-small font-semibold">
-              <Link href="/movies">Movies</Link>
+              <Link href="/discover">Movies</Link>
             </li>
             <li className="text-small font-semibold">
               <Link href="/series">Series</Link>
