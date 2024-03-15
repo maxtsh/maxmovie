@@ -3,7 +3,7 @@ import MovieCard from "@/components/MovieCard";
 
 export const revalidate = 10 * 60;
 
-const MoviesPage: React.FC = async () => {
+const DiscoverPage: React.FC = async () => {
   const nowPlaying = await getNowPlayingData({ page: 1 });
   const genres = await getMovieGenresData();
 
@@ -21,4 +21,4 @@ const MoviesPage: React.FC = async () => {
   );
 };
 
-export default MoviesPage;
+export default DiscoverPage;

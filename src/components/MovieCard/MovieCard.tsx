@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { FaStar } from "react-icons/fa";
-import type { MovieListItem, Genre } from "@/Models";
 import MovieImage from "./MovieImage";
+import type { MovieListItem, Genre } from "@/Models";
 
 type Props = {
   movie: MovieListItem;
@@ -12,7 +12,7 @@ const MovieCard: React.FC<Props> = ({ movie, genres }) => {
   return (
     <div className="flex flex-col">
       <Link
-        href={`/movies/${movie.id}`}
+        href={`/discover/${movie.id}`}
         className="flex flex-1 flex-col gap-1 p-2">
         <MovieImage title={movie.title} source={movie.poster_path} />
       </Link>

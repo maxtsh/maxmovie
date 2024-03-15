@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { FaRegCompass, FaRegStar,  } from "react-icons/fa";
+import { FaRegCompass, FaRegStar, FaRegCirclePlay } from "react-icons/fa6";
 import { IoStopwatchOutline } from "react-icons/io5";
+import { MdHowToVote } from "react-icons/md";
 import { BsGear } from "react-icons/bs";
 import ThemeSwitch from "./ThemeSwitch";
 
@@ -17,9 +18,21 @@ const Sidebar: React.FC = () => {
             </Link>
           </li>
           <li>
+            <Link href="/nowplaying" className="flex items-center gap-3">
+              <FaRegCirclePlay size={20} color="var(--icon)" />
+              <h6>Now Playing</h6>
+            </Link>
+          </li>
+          <li>
             <Link href="/toprated" className="flex items-center gap-3">
               <FaRegStar size={20} color="var(--icon)" />
               <h6>Top Rated</h6>
+            </Link>
+          </li>
+          <li>
+            <Link href="/popular" className="flex items-center gap-3">
+              <MdHowToVote size={20} color="var(--icon)" />
+              <h6>Most Popular</h6>
             </Link>
           </li>
           <li>
