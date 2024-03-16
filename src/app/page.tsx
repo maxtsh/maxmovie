@@ -1,15 +1,13 @@
-import Link from "next/link";
+import { getDiscoverData, getMovieGenresData } from "@/service";
+import HomeSlider from "@/components/HomeSlider";
 
-const HomePage: React.FC = () => {
+const HomePage: React.FC = async () => {
+  const data = await getDiscoverData({ page: 1 });
+  const genres = await getMovieGenresData();
+
   return (
     <main className="flex h-[100dvh] flex-col">
-      <div className="flex flex-1 flex-col items-center justify-center gap-2">
-        <h1>Welcome to Max Movies</h1>
-        <p>This project is under construction...</p>
-        <Link href="/discover">
-          <h5>Go to Movies</h5>
-        </Link>
-      </div>
+      <HomeSlider slides={data.results} genres={genres.genres} />
     </main>
   );
 };
