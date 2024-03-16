@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FaStar } from "react-icons/fa";
+import { FaRegStar } from "react-icons/fa6";
 import MovieImage from "./MovieImage";
 import type { MovieListItem, Genre } from "@/Models";
 
@@ -19,7 +19,7 @@ const MovieCard: React.FC<Props> = ({ movie, genres }) => {
       <h6 className="ellipsis font-bold">{movie.title}</h6>
       <div className="flex items-center gap-1">
         <div className="flex items-center gap-1">
-          <FaStar size={18} className="text-yellow-400" />
+          <FaRegStar size={18} className="text-yellow-400" />
           <h5 className="text-small">{movie.vote_average.toFixed(1)}</h5>
         </div>
         <span>|</span>
