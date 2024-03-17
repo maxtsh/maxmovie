@@ -7,8 +7,10 @@ export const revalidate = 10 * 60;
 const initalPage = 1;
 
 const NowPlayingPage: React.FC = async () => {
-  const movies = await getNowPlayingData({ page: initalPage });
-  const genres = await getMovieGenresData();
+  const [movieRes, genresRes] = await Promise.allSettled([
+    getNowPlayingData({ page: initalPage }),
+    getMovieGenresData(),
+  ]);
 
   // We can not pass functions directly to client components,
   // we need to pass server actions to client components
@@ -23,12 +25,21 @@ const NowPlayingPage: React.FC = async () => {
         <h2 className="font-extrabold">Now Playing</h2>
       </div>
       <div className="grid grid-cols-1 gap-4 overflow-y-auto md:grid-cols-2 lg:grid-cols-3 xl:max-2xl:grid-cols-4 2xl:grid-cols-5">
-        {movies.results.map((item) => (
-          <MovieCard key={item.id} movie={item} genres={genres.genres} />
-        ))}
+        {movieRes.status === "fulfilled" &&
+          movieRes.value.results.map((item) => (
+            <MovieCard
+              key={item.id}
+              movie={item}
+              genres={
+                genresRes?.status === "fulfilled" ? genresRes.value.genres : []
+              }
+            />
+          ))}
         <InfiniteMoviesScroll
           initialPage={initalPage}
-          genres={genres.genres}
+          genres={
+            genresRes?.status === "fulfilled" ? genresRes.value.genres : []
+          }
           fetchMore={fetchMore}
         />
       </div>
