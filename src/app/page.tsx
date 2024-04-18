@@ -3,6 +3,8 @@ import HomeSlider from "@/components/HomeSlider";
 
 const initalPage = 1;
 
+export const revalidate = 24 * 60 * 60;
+
 const HomePage: React.FC = async () => {
   const [movieRes, genresRes] = await Promise.allSettled([
     getDiscoverData({ page: initalPage }),
