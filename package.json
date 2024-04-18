@@ -10,8 +10,8 @@
   },
   "dependencies": {
     "@nextui-org/react": "^2.2.10",
-    "framer-motion": "^11.0.8",
-    "next": "^14.1.3",
+    "framer-motion": "^11.0.20",
+    "next": "^14.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^5.0.1",
@@ -19,16 +19,16 @@
   },
   "devDependencies": {
     "@tailwindcss/container-queries": "^0.1.1",
-    "@types/node": "^20.11.24",
-    "@types/react": "^18.2.61",
-    "@types/react-dom": "^18.2.19",
-    "autoprefixer": "^10.4.18",
+    "@types/node": "^20.12.7",
+    "@types/react": "^18.2.77",
+    "@types/react-dom": "^18.2.25",
+    "autoprefixer": "^10.4.19",
     "eslint": "^8.57.0",
-    "eslint-config-next": "^14.1.2",
-    "postcss": "^8.4.35",
-    "postcss-nesting": "^12.0.4",
-    "prettier-plugin-tailwindcss": "^0.5.11",
-    "tailwindcss": "^3.4.1",
-    "typescript": "^5.4.2"
+    "eslint-config-next": "^14.2.0",
+    "postcss": "^8.4.38",
+    "postcss-nesting": "^12.1.0",
+    "prettier-plugin-tailwindcss": "^0.5.12",
+    "tailwindcss": "^3.4.3",
+    "typescript": "^5.4.5"
   }
 }
